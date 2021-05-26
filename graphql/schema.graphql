@@ -1,0 +1,15 @@
+type Product {
+  productId: ID,
+  productName: String,
+  brand: String,
+}
+
+type ProductView {
+    slug: String
+    count: Int
+}
+
+type Query {
+  ProductQuery (sku: ID!): [Product]
+  productList(topN: Int): [ProductView]
+}
