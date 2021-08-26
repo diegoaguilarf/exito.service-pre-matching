@@ -9,6 +9,10 @@
     "matching": {
       "path": "/_v/matching",
       "public": true
+    },
+    "suggestions": {
+      "path": "/_v/suggestions",
+      "public": true
     }
   }
 }

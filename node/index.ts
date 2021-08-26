@@ -3,6 +3,7 @@ import { LRUCache, method, Service } from '@vtex/api'
 
 import { Clients } from './clients'
 import { matching } from './middlewares/matching'
+import { suggestions } from './middlewares/suggestions'
 
 const TIMEOUT_MS = 800
 
@@ -45,6 +46,9 @@ export default new Service({
   routes: {
     matching: method({
       POST: matching,
+    }),
+    suggestions: method({
+      POST: suggestions
     })
   },
 })
