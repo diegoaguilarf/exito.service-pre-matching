@@ -16,7 +16,18 @@ export default class Suggestion extends ExternalClient {
                 "X-VTEX-API-AppToken": "KXRDLKLVRJIWCAAHAROACAOLDBQIEEHRVFWHIXQLIONPGZYBBWQZQAOJIFAKTDQNCQBXDTZDBCSNMYFEDPGINIAURMYCXGSFXANPYBYIWNXOIAXJZVGEWIATPHFQUWGV"
             }
         };
-        console.log(URL, JSON.stringify(DATA));
         return this.http.put(URL, DATA, CONFIG)
+    }
+
+    public async deleteSuggestion({ accountName, sellerId, sellerSkuId }: any): Promise<any> {
+
+        const URL = `https://api.vtex.com/${accountName}/suggestions/${sellerId}/${sellerSkuId}`;
+        const CONFIG = {
+            headers: {
+                "X-VTEX-API-AppKey": "vtexappkey-exito-NPAJZQ",
+                "X-VTEX-API-AppToken": "KXRDLKLVRJIWCAAHAROACAOLDBQIEEHRVFWHIXQLIONPGZYBBWQZQAOJIFAKTDQNCQBXDTZDBCSNMYFEDPGINIAURMYCXGSFXANPYBYIWNXOIAXJZVGEWIATPHFQUWGV"
+            }
+        };
+        return this.http.delete(URL, CONFIG)
     }
 }
